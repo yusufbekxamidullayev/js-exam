@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-[#fdfaf0]">
+
+    <div id="loading"
+        class="fixed inset-0 z-50 w-full h-full bg-[#fbf8ec] flex flex-col items-center justify-center space-y-6">
+        <img src="../assets/image/Spinner@1x-1.0s-200px-200px.svg" alt="loading" class="w-50 h-50 animate-spin" />
+    </div>
+
+    <header class="shadow-[2px_4px_8px_0px_#0000001A] z-2 fixed w-full bg-white top-0 py-3">
+        <nav class="container mx-auto px-3 py-3 flex gap-3 items-center justify-between">
+            <div class="flex items-center gap-3 flex-grow max-w-[1100px]">
+                <a href="/index.html" class="flex items-center gap-2">
+                    <img src="../assets/image/logo.png" alt="logo" class="w-full w-8 h-8 md:w-10 md:h-10">
+                    <p class="hidden lg:block font-bold uppercase text-sm lg:text-base">Северяночка</p>
+                </a>
+
+                <div class="flex items-center gap-3 ml-5 flex-grow">
+                    <div
+                        class="hidden md:flex items-center gap-[8px] bg-[#70C05B] max-w-[70px] lg:max-w-[130px] w-full px-3 md:px-5 py-3 md:py-4 rounded-md">
+                        <button id="toggleBtn">
+                            <img id="menu" class="" width="27" src="../assets/image/menu1.png" alt="menu">
+                            <img id="close" class="hidden" width="27" src="../assets/images/another/close.svg"
+                                alt="close">
+                        </button>
+                        <p class="hidden lg:block text-white text-xs lg:text-[16px] font-medium">Каталог</p>
+                    </div>
+
+                    <div class="flex items-center border border-[#70C05B] relative rounded-md flex-grow max-w-[860px]">
+                        <input id="search" type="text" placeholder="Найти товар"
+                            class="px-5 py-3 text-[18px] flex-grow min-w-0 outline-none border-none rounded-l-md">
+                        <div
+                            class="search-cards w-full absolute top-13 bg-white border-[2px] border-gray-300 rounded-[10px] p-[10px] max-h-48 overflow-y-auto ">
+
+                        </div>
+                        <button class="px-3 rounded-r-md">
+                            <img src="../assets/image/search.png" alt="search" class="w-6 h-6">
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-3 md:gap-5 text-[10px] sm:text-xs md:text-sm ml-3">
+                <a href="/pages/favorites.html" class="flex flex-col items-center">
+                    <img src="/assets/image/yurak.png" alt="favorites" class="w-full w-5 h-5 md:w-6 md:h-6">
+                    <p>Избранное</p>
+                </a>
+
+                <a href="/pages/products.html" class="flex flex-col items-center">
+                    <img src="/assets/image/karobka.png" alt="orders" class="w-full w-5 h-5 md:w-6 md:h-6">
+                    <p>Заказы</p>
+                </a>
+
+                <a href="/pages/basket.html" class="flex flex-col items-center relative">
+                    <img src="/assets/image/savat.png" alt="basket" class="w-full w-5 h-5 md:w-6 md:h-6">
+                    <p class="relative">Корзина <span
+                            class="absolute top-[-35px] left-[35px] text-[orangered] font-bold" id="badge"></span></p>
+                </a>
+
+                <div id="profil" class="flex flex-col items-center cursor-pointer">
+                    <img id="profil-img" src="/assets/image/avatar (1).png" alt="Avatar"
+                        class="w-full w-6 h-6 md:w-8 md:h-8 rounded-full object-cover">
+                    <p id="profil-name" class="relative">Вход</p>
+                </div>
+
+                <div id="profil-modal"
+                    class="hidden fixed z-20 left-0 top-0 w-full h-full bg-[orangered]/50 flex items-center justify-center p-[30px] duration-300">
+                    <div id="inner-profil-modal"
+                        class="max-w-[500px] w-full p-[30px] bg-[white] rounded-[20px] flex flex-col gap-5 duration-300">
+                        <h1 class="font-bold text-[25px] text-center">Вход</h1>
+                        <form id="form-modal" class="flex flex-col gap-2">
+                            <p class="text-[gray] text-[18px]">Телефон</p>
+                            <input required class="border-1 border-[green] py-2 px-2" type="tel"
+                                placeholder="Your Name">
+                            <div class="flex items-center justify-between">
+                                <button
+                                    class="cursor-pointer text-[green] text-[16px] bg-transparent">регистрация</button>
+                                <button class="cursor-pointer text-[orangered] text-[16px] bg-transparent">забыли
+                                    пароль?</button>
+                            </div>
+                            <button type="submit"
+                                class="w-full bg-[orangered] border-1 border-[orangered] px-2 py-3 mt-5 rounded-[5px] text-[white] text-[20px] font-medium cursor-pointer">Вход</button>
+                        </form>
+                    </div>
+                </div>
+        </nav>
+    </header>
+
+    <ul id="res-menu"
+        class="hidden md:grid w-full pt-[100px] pb-[20px] px-[90px] grid-cols-2 lg:grid-cols-4 gap-5 duration-300 translate-y-[-100%] bg-white shadow-lg fixed z-1">
+        <li>
+            <a class="text-[16px] text-[Main/onSurface] hover:text-[#FF6633] font-bold"
+                href="../pages/category.html">Fruit</a>
+        </li>
+        <li>
+            <a class="text-[16px] text-[Main/onSurface] hover:text-[#FF6633] font-bold"
+                href="../pages/category.html?category=vegetable">Vegetable</a>
+        </li>
+        <li>
+            <a class="text-[16px] text-[Main/onSurface] hover:text-[#FF6633] font-bold"
+                href="../pages/category.html?category=bakery">Bakery</a>
+        </li>
+        <li>
+            <a class="text-[16px] text-[Main/onSurface] hover:text-[#FF6633] font-bold"
+                href="../pages/category.html?category=meat">Meat</a>
+        </li>
+        <li>
+            <a class="text-[16px] text-[Main/onSurface] hover:text-[#FF6633] font-bold"
+                href="../pages/category.html?category=fastfood">Fast Food</a>
+        </li>
+        <li>
+            <a class="text-[16px] text-[Main/onSurface] hover:text-[#FF6633] font-bold"
+                href="../pages/category.html?category=dairy">Dairy</a>
+        </li>
+        <li>
+            <a class="text-[16px] text-[Main/onSurface] hover:text-[#FF6633] font-bold"
+                href="../pages/category.html?category=dessert">Dessert</a>
+        </li>
+        <li>
+            <a class="text-[16px] text-[Main/onSurface] hover:text-[#FF6633] font-bold"
+                href="../pages/category.html?category=breakfast">Breakfast</a>
+        </li>
+        <li>
+            <a class="text-[16px] text-[Main/onSurface] hover:text-[#FF6633] font-bold"
+                href="../pages/category.html?category=lunch">Lunch</a>
+        </li>
+        <li>
+            <a class="text-[16px] text-[Main/onSurface] hover:text-[#FF6633] font-bold"
+                href="../pages/category.html?category=dinner">Dinner</a>
+        </li>
+    </ul>
+
+    <main>
+
+        <section class="pt-[120px]">
+            <div class="single-products">
+
+            </div>
+        </section>
+
+        
+
+    </main>
+
+
+
+    <footer class="bg-[#F9F5E3] px-4 md:px-8 lg:px-16 py-8">
+        <div
+            class="max-w-7xl mx-auto pb-[65px] flex flex-col lg:flex-row justify-between items-center lg:items-center gap-6 lg:gap-0">
+            <div class="flex-shrink-0">
+                <img src="/assets/image/logo (2).png" alt="logo" class="w-20 md:w-28 lg:w-32">
+            </div>
+
+            <div
+                class="flex flex-wrap justify-center pl-[30px] lg:justify-start gap-[40px] gap-y-2 text-sm text-[#414141] ">
+                <a href="" class="hover:text-[#FF6633]">О компании</a>
+                <a href="/контакты.html" class="hover:text-[#FF6633]">Контакты</a>
+                <a href="/вакансы.html" class="hover:text-[#FF6633]">Вакансии</a>
+                <a href="" class="hover:text-[#FF6633]">Статьи</a>
+                <a href="" class="hover:text-[#FF6633]">Политика обработки персональных данных</a>
+            </div>
+
+            <div class="flex flex-col lg:flex-row items-center lg:items-center gap-4 lg:gap-8">
+                <div class="flex gap-4">
+                    <img src="/assets/image/instagram.png" alt="instagram" class="w-6 h-6">
+                    <img src="/assets/image/vkontakte.png" alt="vkontakte" class="w-6 h-6">
+                    <img src="/assets/image/facebook.png" alt="facebook" class="w-6 h-6">
+                    <img src="/assets/image/ok.png" alt="ok" class="w-6 h-6">
+                </div>
+                <div class="flex items-center gap-2">
+                    <img src="/assets/image/telefon.png" alt="telefon" class="w-5 h-5">
+                    <span class="text-base text-[#414141]">8 800 777 33 33</span>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto">
+            <div
+                class="fixed bottom-0 left-0 z-[100] flex items-center justify-center gap-6  bg-[white] w-full py-[15px]  sm:hidden">
+
+                <div>
+                    <a class="flex flex-col items-center" href="">
+                        <img src="/assets/image/menu.png" alt="menu" class="w-5 h-5">
+                        <a class="text-xs" href="">Каталог</a>
+                    </a>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="/assets/image/yurak.png" alt="yurak" class="w-5 h-5">
+                    <p class="text-xs">Избранное</p>
+                </div>
+                <div>
+                    <a class="flex flex-col items-center" href="./все-продукты.html">
+                        <img src="/assets/image/karobka.png" alt="karobka" class="w-5 h-5">
+                        <p class="text-xs">продукты</p>
+                    </a>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="/assets/image/savat.png" alt="savat" class="w-5 h-5">
+                    <p class="text-xs">Корзина</p>
+                </div>
+                <div>
+                    <img src="/assets/image/avatar (1).png" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/products-data.js"></script>
+    <script src="../js/product.js"></script>
+    <script src="../js/products.js"></script>
+    <script src="/js/profil.js"></script>
+    <script src="../js/catalogMenu.js"></script>
+
+</body>
+
+</html>

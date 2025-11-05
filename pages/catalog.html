@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <header class="shadow-sm ">
+        <div class="container mx-auto">
+            <div
+                class="fixed top-0 left-0 right-0 bg-[white] z-[3] py-[15px] flex items-center justify-between py-3 gap-3 pl-[10px] pr-[10px] lg:hidden">
+                <div class="flex items-center gap-2">
+                    <img src="/assets/image/logo.png" alt="yuz" class="w-8 h-8">
+                </div>
+
+                <div
+                    class="flex items-center border border-[#70C05B] relative rounded-md flex-grow max-w-[800px] mx-[10px]">
+                    <input id="input" type="text" placeholder="Найти товар"
+                        class="px-5 py-3 text-[18px] flex-grow min-w-0 outline-none border-none rounded-l-md">
+                    <div
+                        class="input-cards  w-full pl-[10px] absolute flex flex-col gap-[10px] top-[60px] bg-white border-[2px] border-gray-300 rounded-[10px] py-2 pr-10 max-h-[300px] overflow-y-auto ">
+
+                    </div>
+                    <button class="px-3 rounded-r-md">
+                        <img src="/assets/image/search.png" alt="search" class="w-6 h-6">
+                    </button>
+                </div>
+            </div>
+
+            <div
+                class="hidden lg:flex flex-wrap items-center justify-between py-4 gap-4 fixed top-0 left-0 right-0 bg-[white] z-[100] pl-[20px] pr-[20px]">
+                <div>
+                    <a class="flex items-center gap-3" href="/index.html">
+                        <img src="/assets/image/logo.png" alt="yuz" class="w-8 h-8">
+                        <h1 class="font-bold text-lg sm:text-xl">Северяночка</h1>
+                    </a>
+                </div>
+
+                <div>
+                    <button id="toggleBtn"
+                        class="flex items-center gap-2 rounded-md w-[140px] h-[40px] bg-[#70C05B] text-white justify-center">
+                        <img src="/assets/image/menu1.png" alt="menu" class="w-5 h-5">
+                        <a href="#">
+                            <span>Каталог</span>
+                        </a>
+                    </button>
+                </div>
+
+                <div class="flex items-center border border-[#70C05B] relative rounded-md flex-grow max-w-[400px]">
+                    <input id="search" type="text" placeholder="Найти товар"
+                        class="px-5 py-3 text-[18px] flex-grow min-w-0 outline-none border-none rounded-l-md">
+                    <div
+                        class="search-cards w-full pl-[10px] absolute flex flex-col gap-[10px] top-[60px] bg-white border-[2px] border-gray-300 rounded-[10px] py-2 pr-10 max-h-[355px] overflow-y-auto ">
+
+                    </div>
+                    <button class="px-3 rounded-r-md">
+                        <img src="/assets/image/search.png" alt="search" class="w-6 h-6">
+                    </button>
+                </div>
+
+                <div class="flex items-center gap-6">
+                    <div class="flex flex-col items-center">
+                        <img src="/assets/image/yurak.png" alt="yurak" class="w-5 h-5">
+                        <p class="text-xs">Избранное</p>
+                    </div>
+                    <div>
+                        <a class="flex flex-col items-center" href="/все-продукты.html">
+                            <img src="/assets/image/karobka.png" alt="karobka" class="w-5 h-5">
+                            <p class="text-xs">продукты</p>
+                        </a>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <a class="flex flex-col items-center" href="/cart.html">
+                            <div class="flex items-center gap-[3px]">
+                                <img src="/assets/image/savat.png" alt="savat" class="w-5 h-5">
+                                <p id="badge"
+                                    class="text-[12px] bg-[red] text-[white] h-[18px] w-[18px] items-center text-center rounded-[100px]">
+                                    0</p>
+                            </div>
+                            <div>
+                                <p class="text-xs">Корзина</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <img src="/assets/image/avatar (1).png" alt="avatar" class="w-8 h-8 rounded-full">
+                    <p class="text-sm sm:text-base text-[#232323]">Алексей</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="pt-[60px] pl-[50px]">
+            <div class="container mx-auto">
+                <div class="pb-[30px]">
+                    <h1 class="text-[#414141] text-[64px] font-bold">Каталог</h1>
+                </div>
+                <div class="grid grid-cols-1 gap-[50px] sm:grid-cols-1 md:grid-cols-2 lg:flex flex-row  xl:flex-row">
+                    <div class="relative max-w-[500px] w-full h-[200px] overflow-hidden rounded-lg">
+                        <div class="absolute inset-0 bg-[url('../assets/image/tuxum.png')] bg-cover"></div>
+                        <div class="absolute  inset-0 bg-gradient-to-t from-green-500 via-green-500/30"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white text-lg font-semibold">
+                            Молоко, сыр, яйцо
+                        </div>
+                    </div>
+                    <div class="relative w-[250px] h-[200px] overflow-hidden rounded-lg">
+                        <div class="absolute inset-0 bg-[url('../assets/image/non.png')] bg-cover"></div>
+                        <div class="absolute  inset-0 bg-gradient-to-t from-orange-400 via-orange-500/30"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white text-lg font-semibold">
+                            хлеб
+                        </div>
+                    </div>
+                    <div class="relative w-[250px] h-[200px] overflow-hidden rounded-lg">
+                        <div class="absolute inset-0 bg-[url('../assets/image/sabzavot.png')] bg-cover"></div>
+                        <div class="absolute  inset-0 bg-gradient-to-t from-green-400 via-green-500/30"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white text-lg font-semibold">
+                            Фрукты и овощи
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="pt-[50px] grid grid-cols-1 gap-[32px] sm:grid-cols-2 md:grid-cols-3 lg:flex flex-row  xl:flex-row">
+                    <div class="relative max-w-[250px] w-full  h-[200px] overflow-hidden rounded-lg">
+                        <div class="absolute inset-0 bg-[url('../assets/image/muz.png')] bg-cover"></div>
+                        <div class="absolute  inset-0 bg-gradient-to-t from-green-400 via-green-500/30"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white text-lg font-semibold">
+                            Замороженные продукты
+                        </div>
+                    </div>
+                    <div class="relative max-w-[250px] w-full h-[200px] overflow-hidden rounded-lg">
+                        <div class="absolute inset-0 bg-[url('../assets/image/pepsi.png')] bg-cover"></div>
+                        <div class="absolute  inset-0 bg-gradient-to-t from-green-400 via-green-500/30"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white text-lg font-semibold">
+                            Напитки
+                        </div>
+                    </div>
+                    <div class="relative max-w-[250px] w-full h-[200px] overflow-hidden rounded-lg">
+                        <div class="absolute inset-0 bg-[url('../assets/image/marmelat.png')] bg-cover"></div>
+                        <div class="absolute  inset-0 bg-gradient-to-t from-green-400 via-green-500/30"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white text-lg font-semibold">
+                            Кондитерские изделия
+                        </div>
+                    </div>
+                    <div class="relative max-w-[250px] w-full h-[200px] overflow-hidden rounded-lg">
+                        <div class="absolute inset-0 bg-[url('../assets/image/kofe.png')] bg-cover"></div>
+                        <div class="absolute  inset-0 bg-gradient-to-t from-green-400 via-green-500/30"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white text-lg font-semibold">
+                            Чай, кофе
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="pt-[50px] grid grid-cols-1 gap-[50px] sm:grid-cols-1 md:grid-cols-2 lg:flex flex-row  xl:flex-row">
+                    <div class="relative w-[250px]  h-[200px] overflow-hidden rounded-lg">
+                        <div class="absolute inset-0 bg-[url('../assets/image/makaron.png')] bg-cover"></div>
+                        <div class="absolute  inset-0 bg-gradient-to-t from-green-500 via-green-500/30"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white text-lg font-semibold">
+                            Молоко, сыр, яйцо
+                        </div>
+                    </div>
+                    <div class="relative w-[250px] h-[200px] overflow-hidden rounded-lg">
+                        <div class="absolute inset-0 bg-[url('../assets/image/apelsin.png')] bg-cover"></div>
+                        <div class="absolute  inset-0 bg-gradient-to-t from-green-400 via-green-500/30"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white text-lg font-semibold">
+                            хлеб
+                        </div>
+                    </div>
+                    <div class="relative max-w-[500px] w-full h-[200px] overflow-hidden rounded-lg">
+                        <div class="absolute inset-0 bg-[url('../assets/image/hayvon.png')] bg-cover"></div>
+                        <div class="absolute  inset-0 bg-gradient-to-t from-green-400 via-green-500/30"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white text-lg font-semibold">
+                            Фрукты и овощи
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="pt-[50px] grid grid-cols-1 gap-[50px] sm:grid-cols-1 md:grid-cols-2 lg:flex flex-row  xl:flex-row">
+                    <div class="relative w-[250px]  h-[200px] overflow-hidden rounded-lg">
+                        <div class="absolute inset-0 bg-[url('../assets/image/chaqaloq.png')] bg-cover"></div>
+                        <div class="absolute  inset-0 bg-gradient-to-t from-green-500 via-green-500/30"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white text-lg font-semibold">
+                            Молоко, сыр, яйцо
+                        </div>
+                    </div>
+                    <div class="relative max-w-[500px] w-full h-[200px] overflow-hidden rounded-lg">
+                        <div class="absolute inset-0 bg-[url('../assets/image/kolbasa2.png')] bg-cover"></div>
+                        <div class="absolute  inset-0 bg-gradient-to-t from-green-400 via-green-500/30"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white text-lg font-semibold">
+                            хлеб
+                        </div>
+                    </div>
+                    <div class="relative w-[250px]  h-[200px] overflow-hidden rounded-lg">
+                        <div class="absolute inset-0 bg-[url('../assets/image/tozalash.png')] bg-cover"></div>
+                        <div class="absolute  inset-0 bg-gradient-to-t from-green-400 via-green-500/30"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white text-lg font-semibold">
+                            Фрукты и овощи
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="mt-[50px] bg-[#F9F5E3] px-4 md:px-8 lg:px-16 py-8">
+        <div
+            class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center lg:items-center gap-6 lg:gap-0">
+            <div class="flex-shrink-0">
+                <img src="../assets/image/logo.png" alt="logo" class="w-20 md:w-28 lg:w-32">
+            </div>
+
+            <div
+                class="flex flex-wrap justify-center pl-[30px] lg:justify-start gap-[40px] gap-y-2 text-sm text-[#414141] ">
+                <a href="" class="hover:text-[#FF6633]">О компании</a>
+                <a href="/контакты.html" class="hover:text-[#FF6633]">Контакты</a>
+                <a href="/вакансы.html" class="hover:text-[#FF6633]">Вакансии</a>
+                <a href="" class="hover:text-[#FF6633]">Статьи</a>
+                <a href="" class="hover:text-[#FF6633]">Политика обработки персональных данных</a>
+            </div>
+
+            <div class="flex flex-col lg:flex-row items-center lg:items-center gap-4 lg:gap-8">
+                <div class="flex gap-4">
+                    <img src="/assets/image/instagram.png" alt="instagram" class="w-6 h-6">
+                    <img src="/assets/image/vkontakte.png" alt="vkontakte" class="w-6 h-6">
+                    <img src="/assets/image/facebook.png" alt="facebook" class="w-6 h-6">
+                    <img src="/assets/image/ok.png" alt="ok" class="w-6 h-6">
+                </div>
+                <div class="flex items-center gap-2">
+                    <img src="/assets/image/telefon.png" alt="telefon" class="w-5 h-5">
+                    <span class="text-base text-[#414141]">8 800 777 33 33</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/products-data.js"></script>
+    <script src="/js/search.js"></script>
+    <script src="/js/card.js"></script>
+    <script src="/js/products.js"></script>
+    <script src="/js/toogle.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerse</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+
+    <div id="loading" class="fixed w-full h-full z-[4] duration-600">
+        <img class="w-full h-full" src="./assets/image/Spinner@1x-1.0s-200px-200px.svg" alt="loading">
+    </div>
+
+
+    <header class="py-[20px] px-[20px] bg-[white] border-b-[3px] border-[#E8E2C8] fixed w-full top-[0] z-[3]">
+        <div class="container mx-auto flex justify-between items-center gap-[16px]">
+            <a class="flex gap-[11px]" href=""><img class="max-w-[39px] w-full h-[32px]" src="./assets/image/logo.png"
+                    alt="logo">
+                <p class="hidden sm:flex font-bold">СЕВЕРЯНОЧКА</p>
+            </a>
+            <button
+                class="hidden sm:flex gap-[15px] bg-[#70C05B] max-w-[40px] 2xl:max-w-[140px] xl:max-w-[140px] md:max-w-[140px] lg:max-w-[40px] w-full h-[40px] cursor-pointer items-center p-[8px] text-[white] rounded-[8px]"><a
+                    class="flex gap-[15px]"><img id="toggle-btn" src="./assets/image/menu1.png" alt="">
+                    <a href="./pages/catalog.html">
+                        <p class="hidden md:flex lg:hidden xl:flex">Каталог</p>
+                    </a>
+            </button>
+            <form class="flex flex-col gap-[5px]">
+                <div class="flex items-center border border-[#70C05B] relative rounded-md flex-grow max-w-[400px]">
+                    <input id="search" type="text" placeholder="Найти товар"
+                        class="px-5 py-3 text-[18px] flex-grow min-w-0 outline-none border-none rounded-l-md">
+                    <div
+                        class="search-cards w-full pl-[10px] absolute flex flex-col gap-[10px] top-[60px] bg-white border-[2px] border-gray-300 rounded-[10px] py-2 pr-10 max-h-[355px] overflow-y-auto ">
+                
+                    </div>
+                    <button class="px-3 rounded-r-md">
+                        <img src="/assets/image/search.png" alt="search" class="w-6 h-6">
+                    </button>
+                </div>
+            </form>
+
+
+            <ul class="flex gap-[24px] hidden lg:flex">
+                <li class="items-center pt-[5px]"><a class="flex flex-col items-center"
+                        href="./pages/like.html"><img src="./assets/image/yurak.png" alt="">Избранное</a>
+                </li>
+                <li class="items-center pt-[5px]"><a class="flex flex-col items-center"
+                        href="./pages/cards.html"><img src="./assets/image/karobka.png" alt="">Продукты</a>
+                </li>
+                <li class="items-center pt-[5px]"><a class="flex flex-col items-center relative"
+                        href="./pages/basket.html"><img class="w-[24px]" src="./assets/image/savat.png" alt="">Корзина
+                        <span id="badge"
+                            class="absolute top-[-10px] right-[7px] bg-[red] rounded-full px-[5px] text-[white] text-[12px]"></span></a>
+                </li>
+            </ul>
+            <div id="profile" class="cursor-pointer hidden sm:flex items-center gap-[10px]">
+                <img id="profile-img" class="w-[40px] h-[40px] rounded-full" src="./assets/image/avatar (1).png" alt="">
+                <h1 id="profile-name" class="pr-[15px] hidden lg:flex">Алексей</h1>
+            </div>
+
+        </div>
+    </header>
+
+    <div id="res-menu"
+        class="all-categories hidden duration-600 bg-[white] sm:flex translate-y-[-100%] fixed w-full top-[0] z-[2] pt-[65px] border-b-[3px] border-[#E8E2C8]">
+        <ul id="categories"
+            class=" px-[20px] sm:grid py-[20px] md:py-[30px] container mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[15px] md:gap-[20px] lg:gap-[30px]">
+
+        </ul>
+    </div>
+
+    <main class="pt-[80px]">
+
+        <section class="bg-[url('/assets/image/bg.png')] bg-cover bg-center h-[250px] sm:w-full md:h-[350px]">
+            <div class="pt-[100px] flex items-center justify-center ">
+                <div class="">
+                    <img class="hidden  sm:w-[250px] md:block md:w-[400px]" src="/assets/image/bg1.png" alt="bg">
+                </div>
+                <div class="px-[5px]">
+                    <h1 class="text-[35px] text-center text-[#414141] font-bold sm:text-[48px] ">Доставка бесплатно от
+                        1000 ₽</h1>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-[#FBF8EC] px-[20px] pt-[80px] pb-[120px]">
+
+            <div class="container mx-auto">
+
+                <div class="flex items-center justify-between">
+                    <h1 class="text-[24px] lg:text-[36px] font-[700] pb-[40px]">Акции</h1>
+                    <span class="flex place-items-center align-middle pb-[25px] gap-[10px]"><a class="text-[#606060]"
+                            href="./pages/cards.html">Все продукты </a><img src="./assets/image/o'ngga.png"
+                            alt=""></span>
+                </div>
+
+                <div class="dis-cards gap-[20px] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+
+                </div>
+            </div>
+
+        </section>
+
+        <section class="bg-[#FBF8EC] px-[20px] pb-[120px]">
+
+            <div class="container mx-auto">
+
+                <div class="flex items-center justify-between">
+                    <h1 class="text-[24px] lg:text-[36px] font-[700] pb-[40px]">Новинки</h1>
+                    <span class="flex place-items-center align-middle pb-[25px] gap-[10px]">
+                        <a class="text-[#606060]" href="./pages/cards.html">Все продукты </a><img
+                            src="./assets/image/o'ngga.png" alt="">
+                    </span>
+                </div>
+
+                <div class="cards gap-[20px] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="bg-[#FBF8EC] px-[20px] pb-[120px]">
+
+            <div class="container mx-auto">
+
+                <div class="flex items-center justify-between">
+                    <h1 class="text-[24px] lg:text-[36px] font-[700] pb-[40px]">Покупали раньше</h1>
+                    <span class="flex place-items-center align-middle pb-[25px] gap-[10px]">
+                        <a class="text-[#606060]" href="./pages/cards.html">Все продукты </a><img
+                            src="./assets/image/o'ngga.png" alt="">
+                    </span>
+                </div>
+
+                <div class="recent-products grid grid-cols-2 items-center justify-center text-center md:grid md:grid-cols-3 mx-[10px] lg:grid-cols-3 xl:grid xl:grid-cols-4 gap-[30px]">
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="bg-[#FBF8EC] px-[20px] pb-[120px]">
+            <div class="container mx-auto">
+                <h1 class="text-[24px] lg:text-[36px] font-[700] pb-[40px]">Специальные предложения</h1>
+                <div class="pt-[50px] flex flex-col items-center xl:flex justify-center  xl:flex-row gap-[30px]">
+                    <div
+                        class="flex flex-col items-center justify-center  sm: md:flex-row  gap-[10px] max-w-[600px] w-full bg-[#FCD5BA]  rounded-[10px]">
+                        <div class="pl-[30px]">
+                            <h1 class="text-[24px] font-bold text-[#414141]">Оформите карту <br> «Северяночка»</h1>
+                            <p class="text-[16px] text-[#414141]">И получайте бонусы при покупке <br> в магазинах и на
+                                сайте</p>
+                        </div>
+                        <div>
+                            <img class="transform hover:scale-105 transition-transform duration-300 ease" src="/assets/image/qish.png"
+                                alt="muz">
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col items-center justify-center  sm: md:flex-row  gap-[10px] max-w-[600px] w-full bg-[#E5FFDE]  rounded-[10px]">
+                        <div class="pl-[30px]">
+                            <h1 class="text-[24px] font-bold text-[#414141]">Покупайте <br> акционные товары</h1>
+                            <p class="text-[16px] text-[#414141]">И получайте вдвое больше <br> бонусов</p>
+                        </div>
+                        <div class="pt-[10px]">
+                            <img class="transform hover:scale-110 transition-transform duration-300 ease"
+                                src="/assets/image/korzina.png" alt="muz">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-[#FBF8EC] px-[20px] pb-[120px]">
+            <div class="container mx-auto">
+                <h1 class="text-[24px] lg:text-[36px] font-[700] pb-[40px]">Наши магазины</h1>
+
+                <div class="md:flex gap-[24px] pb-[24px] white-space">
+                    <button
+                        class="mb-[5px] py-[8px] px-[16px] bg-[#F3F2F1] rounded-[4px] text-[#606060] hover:bg-[#70C05B] hover:text-[white] duration-300 cursor-pointer">п.Щельяюр</button>
+                    <button
+                        class="py-[8px] px-[16px] bg-[#F3F2F1] rounded-[4px] text-[#606060] hover:bg-[#70C05B] hover:text-[white] duration-300 cursor-pointer">д.Вертеп</button>
+                    <button
+                        class="py-[8px] px-[16px] bg-[#F3F2F1] rounded-[4px] text-[#606060] hover:bg-[#70C05B] hover:text-[white] duration-300 cursor-pointer">с.Краснобор</button>
+                    <button
+                        class="py-[8px] px-[16px] bg-[#F3F2F1] rounded-[4px] text-[#606060] hover:bg-[#70C05B] hover:text-[white] duration-300 cursor-pointer">д.Диюр</button>
+                </div>
+
+                <div style="position:relative;overflow:hidden;width:100%;"><a
+                        href="https://yandex.uz/maps/10335/tashkent/?utm_medium=mapframe&utm_source=maps"
+                        style="color:#eee;font-size:12px;position:absolute;top:0px;">Ташкент</a><a
+                        href="https://yandex.uz/maps/10335/tashkent/?ll=69.279737%2C41.311151&utm_medium=mapframe&utm_source=maps&z=12"
+                        style="color:#eee;font-size:12px;position:absolute;top:14px;">Яндекс Карты — транспорт,
+                        навигация, поиск
+                        мест</a><iframe class="w-full"
+                        src="https://yandex.uz/map-widget/v1/?ll=69.279737%2C41.311151&z=12" width="1200px"
+                        height="354px" frameborder="1" allowfullscreen="true"
+                        style="position:relative;border-radius: 4px;"></iframe></div>
+
+            </div>
+        </section>
+
+        <section class="bg-[#FBF8EC] px-[20px] pb-[120px]">
+            <div class="container mx-auto">
+
+                <div class="flex items-center justify-between">
+                    <h1 class="text-[24px] lg:text-[36px] font-[700] pb-[40px]">Статьи</h1>
+                    <span class="flex place-items-center align-middle pb-[25px] gap-[10px]">
+                    </span>
+                </div>
+
+                <div
+                    class="flex flex-col items-center justify-center gap-[50px] sm:  md:grid grid-cols-2 lg: xl:flex xl:flex-row gap-[30px]">
+                    <div class="max-w-[370px] w-full h-[465px] border-[1px] border-[silver] rounded-[10px] overflow-hidden sm:">
+                        <div class="w-full">
+                            <img class="max-w-[370px]" src="/assets/image/maska.png" alt="maska">
+                        </div>
+                        <div class="pl-[10px]">
+                            <p class="text-[12px] text-[#727272] pt-[10px]">05.03.2021</p>
+                            <h1 class="text-[#333333] text-[18px] pt-[10px] font-bold">Режим использования масок и <br>
+                                перчаток на территории магазинов</h1>
+                            <p class="pt-[10px] text-[16px] text-[#333333]">Подробная информация о режимах <br>
+                                использования масок и перчаток на <br> территории магазинов "ЛЕНТА". Информация <br>
+                                обновляется
+                                каждый будний день.</p>
+                            <button
+                                class="w-[150px] h-[40px] bg-[#E5FFDE] mt-[10px] rounded-[5px] hover:bg-[#70C05B] text-[white] transition-colors duration-500 ease-in-out">
+                                <p class="text-[#70C05B] hover:text-[white]">Подробнее</p>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="max-w-[370px] w-full h-[465px] border-[1px] border-[silver] rounded-[10px] overflow-hidden">
+                        <div class="w-full">
+                            <img class="max-w-[370px]" src="/assets/image/bahor.png" alt="maska">
+                        </div>
+                        <div class="pl-[10px]">
+                            <p class="text-[12px] text-[#727272] pt-[10px]">05.03.2021</p>
+                            <h1 class="text-[#333333] text-[18px] pt-[10px] font-bold">Весеннее настроение для каждой
+                            </h1>
+                            <p class="pt-[10px] text-[16px] text-[#333333]">8 Марта – это не просто Международный <br>
+                                женский день, это ещё день тюльпанов, <br> приятных сюрпризов и праздничных тёплых <br>
+                                пожеланий.</p>
+                            <button
+                                class="w-[150px] h-[40px] bg-[#E5FFDE] mt-[35px] rounded-[5px] hover:bg-[#70C05B] text-[white] transition-colors duration-500 ease-in-out">
+                                <p class="text-[#70C05B] hover:text-[white]">Подробнее</p>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="max-w-[370px] w-full h-[465px] border-[1px] border-[silver] rounded-[10px] overflow-hidden">
+                        <div class="w-full">
+                            <img class="max-w-[370px]" src="/assets/image/mevalar.png" alt="maska">
+                        </div>
+                        <div class="pl-[10px]">
+                            <p class="text-[12px] text-[#727272] pt-[10px]">05.03.2021</p>
+                            <h1 class="text-[#333333] text-[18px] pt-[10px] font-bold">ЗОЖ или ФАСТФУД. А вы на чьей
+                                <br> стороне? Голосуем!
+                            </h1>
+                            <p class="pt-[10px] text-[16px] text-[#333333]">Голосуйте за любимые категории, выбирайте
+                                <br> категорию-победителя в мобильном <br> приложении и получайте кешбэк 10% <br>
+                                баллами в
+                                апреле!
+                            </p>
+                            <button
+                                class="w-[150px] h-[40px] bg-[#E5FFDE] mt-[10px] rounded-[5px] hover:bg-[#70C05B] text-[white] transition-colors duration-500 ease-in-out">
+                                <p class="text-[#70C05B] hover:text-[white]">Подробнее</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+        <footer class="bg-[#F9F5E3] px-4 md:px-8 lg:px-16 py-8">
+            <div
+                class="max-w-7xl mx-auto pb-[65px] flex flex-col lg:flex-row justify-between items-center lg:items-center gap-6 lg:gap-0">
+                <div class="flex-shrink-0">
+                    <img src="/assets/image/logo (2).png" alt="logo" class="w-20 md:w-28 lg:w-32">
+                </div>
+        
+                <div
+                    class="flex flex-wrap justify-center pl-[30px] lg:justify-start gap-[40px] gap-y-2 text-sm text-[#414141] ">
+                    <a href="" class="hover:text-[#FF6633]">О компании</a>
+                    <a href="./pages/kontakt.html" class="hover:text-[#FF6633]">Контакты</a>
+                    <a href="./pages/vakancies.html" class="hover:text-[#FF6633]">Вакансии</a>
+                    <a href="" class="hover:text-[#FF6633]">Статьи</a>
+                    <a href="" class="hover:text-[#FF6633]">Политика обработки персональных данных</a>
+                </div>
+        
+                <div class="flex flex-col lg:flex-row items-center lg:items-center gap-4 lg:gap-8">
+                    <div class="flex gap-4">
+                        <img src="/assets/image/instagram.png" alt="instagram" class="w-6 h-6">
+                        <img src="/assets/image/vkontakte.png" alt="vkontakte" class="w-6 h-6">
+                        <img src="/assets/image/facebook.png" alt="facebook" class="w-6 h-6">
+                        <img src="/assets/image/ok.png" alt="ok" class="w-6 h-6">
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <img src="/assets/image/telefon.png" alt="telefon" class="w-5 h-5">
+                        <span class="text-base text-[#414141]">8 800 777 33 33</span>
+                    </div>
+                </div>
+            </div>
+            <div class="container mx-auto">
+                <div
+                    class="fixed bottom-0 left-0 z-[100] flex items-center justify-center gap-6  bg-[white] w-full py-[15px]  sm:hidden">
+        
+                    <div>
+                        <a class="flex flex-col items-center" href="./pages/catalog.html">
+                            <img src="/assets/image/menu.png" alt="menu" class="w-5 h-5">
+                            <a class="text-xs" href="">Каталог</a>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="./pages/like.html" class="flex flex-col items-center">
+                            <img src="/assets/image/yurak.png" alt="yurak" class="w-5 h-5">
+                            <p class="text-xs">Избранное</p>
+                        </a>
+                    </div>
+                    <div>
+                        <a class="flex flex-col items-center" href="./pages/cards.html">
+                            <img src="/assets/image/karobka.png" alt="karobka" class="w-5 h-5">
+                            <p class="text-xs">продукты</p>
+                        </a>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <img src="/assets/image/savat.png" alt="savat" class="w-5 h-5">
+                        <p class="text-xs">Корзина</p>
+                    </div>
+                    <div>
+                        <img src="/assets/image/avatar (1).png" alt="">
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div id="modal"
+            class="hidden fixed z-[5] top-0 left-0 w-full h-full flex items-center justify-center bg-[#FCD5BACD]">
+            <div id="inner-modal"
+                class="container max-w-[450px] h-[500px] bg-[white] gap-[40px] flex flex-col items-center justify-center">
+                <h1 class="text-[24px] font-bold">Вход</h1>
+                <form id="form-modal" class="flex flex-col items-center gap-[30px] w-full">
+                    <input required
+                        class="max-w-[300px] h-[50px] border-[2px] border-[green]/80 rounded-[5px] w-full px-[15px] "
+                        type="text" placeholder="photo">
+                    <input required
+                        class="max-w-[300px] h-[50px] border-[2px] border-[green]/80 rounded-[5px] w-full px-[15px] "
+                        type="text" placeholder="Введите имя">
+                    <input id="profile-tel" required
+                        class="max-w-[300px] h-[50px] border-[2px] border-[green]/80 rounded-[5px] w-full px-[15px] "
+                        type="tel" placeholder="Номер телефона">
+                    <button type="submit"
+                        class="max-w-[300px] h-[50px] font-bold text-[24px] text-[white] bg-[green]/80 rounded-[5px] w-full px-[15px] cursor-pointer hover:bg-[#FF6633] hover:text-[white] duration-300">Вход</button>
+                </form>
+            </div>
+        </div>
+
+        <section
+            class=" sm:hidden py-[5px] px-[20px] bg-[white] border-t-[3px] border-[#E8E2C8] fixed w-full bottom-[0] z-[2]">
+            <div class="container mx-auto">
+                <ul class="flex gap-[5px] sm:hidden items-center justify-between">
+                    <li class="place-items-center pt-[5px]"><a class="flex flex-col items-center text-[14px]"
+                            href="./pages/catalog.html"><img src="./assets/images/Frame 211.svg" alt="">Каталог</a></li>
+                    <li class="place-items-center pt-[5px]"><a class="flex flex-col items-center text-[14px]"
+                            href="./pages/like.html"><img src="./assets/images/favourites.svg"
+                                alt="">Избранное</a></li>
+                    <li class="place-items-center pt-[5px]"><a class="flex flex-col items-center text-[14px]"
+                            href=""><img src="./assets/images/shop.svg" alt="">Корзина</a></li>
+                    <li class="place-items-center pt-[5px]"><a class="flex flex-col items-center text-[14px]"
+                            href="./pages/cards.html"><img src="./assets/images/products.svg" alt="">Продукты</a>
+                    </li>
+                    <li id="profile" class="place-items-center pt-[5px]"><img id="profile-img" class="w-[40px] h-[40px]"
+                            src="./assets/images/avatar.png" alt="">
+                        <h1 id="profile-name" class="pr-[15px] hidden lg:flex">Алексей</h1>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+        <script src="./js/profile.js"></script>
+        <script src="./js/products-data.js"></script>
+        <script src="./js/categories-data.js"></script>
+        <script src="./js/products.js"></script>
+        <script src="./js/search.js"></script>
+        <script src="./js/category.js"></script>
+        <script src="./js/main.js"></script>
+
+</body>
+</html>

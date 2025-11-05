@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everyone</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+
+    <div id="loading" class="fixed w-full h-full z-[4] duration-600">
+        <img class="w-full h-full" src="../assets/image/Spinner@1x-1.0s-200px-200px.svg" alt="loading">
+    </div>
+
+    <header class="shadow-[2px_4px_8px_0px_#0000001A] z-2 fixed w-full bg-white top-0 py-3">
+        <nav class="container mx-auto px-3 py-3 flex gap-3 items-center justify-between">
+            <div class="flex items-center gap-3 flex-grow max-w-[1100px]">
+                <a href="/index.html" class="flex items-center gap-2">
+                    <img src="../assets/image/logo.png" alt="logo" class="w-full w-8 h-8 md:w-10 md:h-10">
+                    <p class="hidden lg:block font-bold uppercase text-sm lg:text-base">Северяночка</p>
+                </a>
+    
+                <div class="flex items-center gap-3 ml-5 flex-grow">
+                    <div
+                        class="hidden md:flex items-center gap-[8px] bg-[#70C05B] max-w-[70px] lg:max-w-[130px] w-full px-3 md:px-5 py-3 md:py-4 rounded-md">
+                        <button id="toggleBtn">
+                            <img id="menu" class="" width="27" src="../assets/image/menu1.png" alt="menu">
+                            <img id="close" class="hidden" width="27" src="../assets/images/another/close.svg" alt="close">
+                        </button>
+                        <p class="hidden lg:block text-white text-xs lg:text-[16px] font-medium">Каталог</p>
+                    </div>
+    
+                    <div class="flex items-center border border-[#70C05B] relative rounded-md flex-grow max-w-[860px]">
+                        <input id="search" type="text" placeholder="Найти товар"
+                            class="px-5 py-3 text-[18px] flex-grow min-w-0 outline-none border-none rounded-l-md">
+                        <div
+                            class="search-cards w-full absolute top-13 bg-white border-[2px] border-gray-300 rounded-[10px] p-[10px] max-h-48 overflow-y-auto ">
+    
+                        </div>
+                        <button class="px-3 rounded-r-md">
+                            <img src="../assets/image/search.png" alt="search" class="w-6 h-6">
+                        </button>
+                    </div>
+    
+                </div>
+            </div>
+    
+            <div class="hidden md:flex items-center gap-3 md:gap-5 text-[10px] sm:text-xs md:text-sm ml-3">
+                <a href="/pages/favorites.html" class="flex flex-col items-center">
+                    <img src="/assets/image/yurak.png" alt="favorites" class="w-full w-5 h-5 md:w-6 md:h-6">
+                    <p>Избранное</p>
+                </a>
+    
+                <a href="/pages/products.html" class="flex flex-col items-center">
+                    <img src="/assets/image/karobka.png" alt="orders" class="w-full w-5 h-5 md:w-6 md:h-6">
+                    <p>Заказы</p>
+                </a>
+    
+                <a href="/pages/basket.html" class="flex flex-col items-center relative">
+                    <img src="/assets/image/savat.png" alt="basket" class="w-full w-5 h-5 md:w-6 md:h-6">
+                    <p class="relative">Корзина <span class="absolute top-[-30px] right-[7px] bg-[red] rounded-full px-[5px] text-[white] text-[12px]"
+                            id="badge"></span></p>
+                </a>
+    
+                <div id="profil" class="flex flex-col items-center cursor-pointer">
+                    <img id="profil-img" src="/assets/image/avatar (1).png" alt="Avatar"
+                        class="w-full w-6 h-6 md:w-8 md:h-8 rounded-full object-cover">
+                    <p id="profil-name" class="relative">Вход</p>
+                </div>
+    
+                <div id="profil-modal"
+                    class="hidden fixed z-20 left-0 top-0 w-full h-full bg-[orangered]/50 flex items-center justify-center p-[30px] duration-300">
+                    <div id="inner-profil-modal"
+                        class="max-w-[500px] w-full p-[30px] bg-[white] rounded-[20px] flex flex-col gap-5 duration-300">
+                        <h1 class="font-bold text-[25px] text-center">Вход</h1>
+                        <form id="form-modal" class="flex flex-col gap-2">
+                            <p class="text-[gray] text-[18px]">Телефон</p>
+                            <input required class="border-1 border-[green] py-2 px-2" type="tel" placeholder="Your Name">
+                            <div class="flex items-center justify-between">
+                                <button class="cursor-pointer text-[green] text-[16px] bg-transparent">регистрация</button>
+                                <button class="cursor-pointer text-[orangered] text-[16px] bg-transparent">забыли
+                                    пароль?</button>
+                            </div>
+                            <button type="submit"
+                                class="w-full bg-[orangered] border-1 border-[orangered] px-2 py-3 mt-5 rounded-[5px] text-[white] text-[20px] font-medium cursor-pointer">Вход</button>
+                        </form>
+                    </div>
+                </div>
+        </nav>
+    </header>
+    
+
+    <main>
+        <section class="pt-[120px]">
+            <div class="container mx-auto">
+                <h1 class="sm:ml-[20px] text-[36px] text-[#414141] font-bold lg:pl-[0px]">Все продукты</h1>
+                <div class="pt-[50px]">
+                    <div id="home-cards"
+                        class="grid grid-cols-2 items-center justify-center text-center md:grid md:grid-cols-3 mx-[10px] lg:grid-cols-3 xl:grid xl:grid-cols-4 gap-[30px]">
+    
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+   
+
+    <script src="../js/profile.js"></script>
+    <script src="../js/products-data.js"></script>
+    <script src="../js/categories-data.js"></script>
+    <script src="../js/cards.js"></script>
+    <script src="../js/catalogMenu.js"></script>
+    <script src="../js/category.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
